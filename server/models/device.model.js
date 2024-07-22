@@ -10,4 +10,4 @@ const deviceSchema = new Schema({
     type: { type: String, required: true }
 })
 
-module.exports = mongoose.model("Device", deviceSchema);
+export const DeviceModel = mongoose.model("facility-device", deviceSchema);

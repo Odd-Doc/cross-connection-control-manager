@@ -1,0 +1,7 @@
+GET https://musical-zebra-xq5jx5r64xrhvxr4-3000.app.github.dev/devices/getDevice
+
+###
+
+POST https://musical-zebra-xq5jx5r64xrhvxr4-3000.app.github.dev/devices/addDevice
+
+###

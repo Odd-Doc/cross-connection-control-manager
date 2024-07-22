@@ -15,4 +15,4 @@ const facilitySchema = new Schema({
     ref: 'Device'}
 })
 
-module.exports = mongoose.model("Device", deviceSchema);
+export const FacilityModel = mongoose.model("Device", deviceSchema);
