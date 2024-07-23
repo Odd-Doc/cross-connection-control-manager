@@ -17,12 +17,13 @@ const uri = process.env.DB_URI;
 mongoose.connect(uri);
 
 
-app.use('/devices', deviceRouter);
+
+app.use('/', deviceRouter);
 
 
 
 
 
-const listener = app.listen(process.env.PORT || 3000, () => {
-    console.log('Your app is listening on port ' + listener.address().port)
-  })
+const listener = app.listen(process.env.PORT || 3001, () => {
+  console.log('Your app is listening on port ' + listener.address().port)
+})

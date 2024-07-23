@@ -3,15 +3,16 @@ import { addDevice, getDevice } from '../controllers/device.controller.js';
 const router = express.Router();
 
 
-// router.get('/', (req, res)=>{
-//     res.send('Devices Page');
-// });
 
-router.get('/getDevice', getDevice)
-router.post('/addDevice', addDevice, ()=>{
-    console.log('herere')
-});
 
+// router.get('/', getDevice)
+// router.post('/', addDevice);
+
+router.route('/device').get((req, res) => {
+    res.json('device page');
+}).post((req, res) => {
+    res.json('post meh');
+})
 
 
 
