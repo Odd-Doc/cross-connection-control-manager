@@ -1,29 +1,24 @@
-import express from 'express';
-import cors from 'cors';
-import 'dotenv/config.js';
-import home from './routes/home.route.js';
-import deviceRouter from './routes/devices.route.js';
-import facilities from './routes/facilities.route.js';
-import mongoose from 'mongoose';
-import { DeviceModel } from './models/device.model.js';
-import { addDevice } from './controllers/device.controller.js';
+import express from "express";
+import cors from "cors";
+import "dotenv/config.js";
+import deviceRouter from "./routes/devices.route.js";
+import facilityRouter from "./routes/facilities.route.js";
+import mongoose from "mongoose";
 
 const app = express();
+
+app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-
-app.use(express.json());
-
 const uri = process.env.DB_URI;
 mongoose.connect(uri);
 
+//#region Routes
+app.use("/device", deviceRouter);
+app.use("/facilities", facilityRouter);
 
-
-app.use('/', deviceRouter);
-
-
-
-
+//#endregion
 
 const listener = app.listen(process.env.PORT || 3001, () => {
-  console.log('Your app is listening on port ' + listener.address().port)
-})
+  console.log("Your app is listening on port " + listener.address().port);
+});

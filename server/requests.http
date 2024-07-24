@@ -2,6 +2,10 @@ GET http://localhost:3001/device
 
 ###
 
-POST http://localhost:3001/device
+POST http://localhost:3001/device/addDevice
+
+###
+
+POST http://localhost:3001/facilities/addFacility
 
 ###

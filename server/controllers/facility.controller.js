@@ -1,22 +1,29 @@
-import { FacilityModel } from "../models/facility.model.js";
+import { Facility } from "../models/facility.model.js";
+import { Device } from "../models/device.model.js";
+export const addFacility = async (req, res) => {
+  console.log("facility added");
+  // const newFacility = new Facility({
+  //   name: req.body.name,
+  //   address: {
+  //     street: req.body.street,
+  //     city: req.body.city,
+  //     state: req.body.state,
+  //     zip: req.body.zip,
+  //   },
+  //   devices: {},
+  // });
+  var deviceToAdd = await Device.findById("66a131bb106cb22b36983974");
+  const newFacility = new Facility({
+    name: "Doc's Surplus",
+    address: {
+      street: "8982 NotSoGreat Southwest Pkwy ",
+      city: "Grand Prairie",
+      state: "TX",
+      zip: 75050,
+    },
+    devices: [deviceToAdd],
+  });
+  newFacility.save();
 
-export const getDevice = async (req, res)=>{
-    const foundDevice = await DeviceModel.findOne()
-   
-   console.log("get device")
-    res.send({foundDevice})
-}
-export const addDevice =  (req, res)=>{  console.log("device added")
-     const newDevice =  new DeviceModel({
-        manufacturer: "Watts",
-        model: "LF009QT",
-        size: 1,
-        type: "rp"
-    });
-    newDevice.save();
-    
-  
-      res.json({newDevice})
-}
-
-
+  res.json({ newFacility });
+};

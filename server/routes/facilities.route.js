@@ -1,9 +1,7 @@
-import express from 'express';
+import express from "express";
 const router = express.Router();
+import { addFacility } from "../controllers/facility.controller.js";
 
-
-router.get('/', (req, res)=>{
-    res.send('Facilities Page');
-});
+router.post("/addFacility", addFacility);
 
 export default router;
