@@ -1,8 +1,8 @@
-import { Button, Form, FormField, Checkbox } from 'semantic-ui-react'
+import { Button, Form, FormField } from 'semantic-ui-react'
 
 export default function AddDevice() {
     return (
-        <Form>
+        <Form className="add-device">
             <FormField>
                 <label>Manufacturer</label>
                 <input placeholder='Manufacturer' />
@@ -12,7 +12,16 @@ export default function AddDevice() {
                 <input placeholder='Model' />
             </FormField>
             <FormField>
-                {/* <Checkbox label='I agree to the Terms and Conditions' /> */}
+                <label>Size</label>
+                <input placeholder='Model' />
+            </FormField>
+            <FormField>
+                <label>Type</label>
+                <input placeholder='Model' />
+            </FormField>
+            <FormField>
+                <label>Serial Number</label>
+                <input placeholder='Model' />
             </FormField>
             <Button type='submit'>Submit</Button>
         </Form>

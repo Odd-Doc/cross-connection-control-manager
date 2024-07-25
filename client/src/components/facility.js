@@ -1,15 +1,15 @@
-import { Button, Form, FormField, Checkbox } from 'semantic-ui-react'
+import { Button, Form, FormField } from 'semantic-ui-react'
 
 export default function Facility() {
     return (
         <Form>
             <FormField>
-                <label>Manufacturer</label>
-                <input placeholder='Manufacturer' />
+                <label>Name</label>
+                {/* <input placeholder='Manufacturer' /> */}
             </FormField>
             <FormField>
-                <label>Model</label>
-                <input placeholder='Model' />
+                <label>Address</label>
+                {/* <input placeholder='Model' /> */}
             </FormField>
             <FormField>
                 {/* <Checkbox label='I agree to the Terms and Conditions' /> */}
