@@ -1,3 +1,12 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.add-device {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 25%;
 }

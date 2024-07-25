@@ -1,23 +1,21 @@
-import "semantic-ui-css/semantic.min.css";
-import { ToastContainer } from "react-toastify";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home.js";
-import AddDevice from "./pages/AddDevice.js";
-import AddFacility from "./pages/AddFacility.js";
-import "./App.css";
+
+import './App.css';
+import 'semantic-ui-css/semantic.min.css'
+import AddDevice from './components/add-device';
+import Facility from './components/facility';
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
+
     <div className="App">
-      <BrowserRouter>
-        <ToastContainer />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/addDevice" element={<AddDevice />} />
-          <Route path="/addFacility" element={<AddFacility />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path='/' element={<AddDevice />} />
+        <Route path='/facility' element={<Facility />} />
+
+      </Routes>
     </div>
+
   );
 }
 
